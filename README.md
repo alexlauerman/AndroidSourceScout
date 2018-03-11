@@ -1,4 +1,4 @@
-# AndroidSourceScout
+# TrustFoundry's Android Source Scout
 Android Security Static Analysis Tool for Android Studio performs static analysis of Android source code to detect security vulnerabilities. Detecting security vulnerabilities as they are written greatly decreases the cost to fix them. Additionally, educating developers about the safe way to write code has many additional benefits. 
 
 # Status
