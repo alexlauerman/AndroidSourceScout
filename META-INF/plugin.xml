@@ -1,0 +1,183 @@
+<idea-plugin version="2">
+  <id>com.trustfoundry.code.scanner</id>
+  <name>SourceScout</name>
+  <version>0.2.2</version>
+  <vendor email="support@trustfoundry.net" url="https://trustfoundry.net">TrustFoundry</vendor>
+
+  <description><![CDATA[
+      Android source code vulnerability scanner. Flags potentially-dangerous code and provides information about the underlying issue and guidance on how to fix it.<br>
+
+      <!--<em>most HTML tags may be used</em>-->
+    ]]></description>
+
+  <!--<change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>-->
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <!--<inspectionToolProvider implementation="com.intellij.codeInspection.ComparingReferencesProvider"/>-->
+
+    <localInspection implementationClass="com.intellij.codeInspection.ClipboardMethodCallInspection"
+                     enabledByDefault="true"
+                     groupName="Android Security Issues"
+                     displayName="Potential Issues"
+                     hasStaticDescription="true"
+                     />
+
+    <localInspection implementationClass="com.intellij.codeInspection.SSLVerificationMethodCallInspection"
+                     enabledByDefault="true"
+                     groupName="Android Security Issues"
+                     displayName="Potential Issues"
+                     hasStaticDescription="true"
+    />
+
+
+    <localInspection implementationClass="com.intellij.codeInspection.ExternalAccessMethodCallInspection"
+                     enabledByDefault="true"
+                     groupName="Android Security Issues"
+                     displayName="Potential Issues"
+                     hasStaticDescription="true"
+    />
+
+      <localInspection implementationClass="com.intellij.codeInspection.BroadcastMethodCallInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Issues"
+                       hasStaticDescription="true"
+              />
+
+      <localInspection implementationClass="com.intellij.codeInspection.GeolocationMethodCallInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Issues"
+                       hasStaticDescription="true"
+              />
+
+      <localInspection implementationClass="com.intellij.codeInspection.WebViewJavaScriptInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Issues"
+                       hasStaticDescription="true"
+              />
+
+      <localInspection implementationClass="com.intellij.codeInspection.WorldWriteableInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Issues"
+                       hasStaticDescription="true"
+              />
+
+      <localInspection implementationClass="com.intellij.codeInspection.XXEJAXPInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Issues"
+                       hasStaticDescription="true"
+              />
+
+      <localInspection implementationClass="com.intellij.codeInspection.XXESAXInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Issues"
+                       hasStaticDescription="true"
+              />
+
+      <localInspection implementationClass="com.intellij.codeInspection.HttpProtocolInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Issues"
+                       hasStaticDescription="true"
+              />
+
+      <localInspection implementationClass="com.intellij.codeInspection.SQLInjectionInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Issues"
+                       hasStaticDescription="true"
+              />
+
+      <localInspection implementationClass="com.intellij.codeInspection.SQLParametersInjectionInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Issues"
+                       hasStaticDescription="true"
+              />
+
+
+      <!-- manifest inspections -->
+
+    <localInspection implementationClass="com.intellij.codeInspection.manifest.ExportedManifestInspection"
+                     enabledByDefault="true"
+                     groupName="Android Security Issues"
+                     displayName="Potential Manifest Issues"
+                     hasStaticDescription="true"
+                    />
+
+    <localInspection implementationClass="com.intellij.codeInspection.manifest.DebuggableManifestInspection"
+                     enabledByDefault="true"
+                     groupName="Android Security Issues"
+                     displayName="Potential Manifest Issues"
+                     hasStaticDescription="true"
+                    />
+
+      <localInspection implementationClass="com.intellij.codeInspection.manifest.ExportedIntentFilterManifestInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Manifest Issues"
+                       hasStaticDescription="true"
+      />
+
+    <localInspection implementationClass="com.intellij.codeInspection.manifest.BackupsManifestInspection"
+                     enabledByDefault="true"
+                     groupName="Android Security Issues"
+                     displayName="Potential Manifest Issues"
+                     hasStaticDescription="true"
+    />
+
+      <localInspection implementationClass="com.intellij.codeInspection.manifest.MaxSdkVersionManifestInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Manifest Issues"
+                       hasStaticDescription="true"
+      />
+
+      <localInspection implementationClass="com.intellij.codeInspection.manifest.ProviderImplicitlyExportedManifestInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Manifest Issues"
+                       hasStaticDescription="true"
+      />
+
+      <localInspection implementationClass="com.intellij.codeInspection.manifest.TargetSdkVersionManifestInspection"
+                       enabledByDefault="true"
+                       groupName="Android Security Issues"
+                       displayName="Potential Manifest Issues"
+                       hasStaticDescription="true"
+      />
+
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
